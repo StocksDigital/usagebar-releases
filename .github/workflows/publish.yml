@@ -21,7 +21,7 @@ jobs:
         run: |
           v=$(cat VERSION)
           if gh release view "v$v" >/dev/null 2>&1; then echo "v$v already published"; exit 0; fi
-          gh release create "v$v" UsageBar_*_x64-setup.exe UsageBar_*_x64-setup.exe.sig latest.json \
+          gh release create "v$v" UsageBar_* latest.json \
             --title "UsageBar $v" --notes-file NOTES.md --target main --latest
       - name: Clear incoming branch
         run: |
